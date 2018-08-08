@@ -10,6 +10,7 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import App from '../App';
 import Header from '../Header';
+import LeftMenu from '../LeftMenu';
 import Intro from '../Intro';
 import '../App.css';
 
@@ -39,7 +40,7 @@ storiesOf('React App', module)
     .addDecorator(withKnobs)
     .add('App', () => {
         setOptions({
-            name: 'React Theming',
+            name: 'MediRita UI Template',
             url: 'https://github.com/sm-react/react-theming',
         });
         return (<App />);
@@ -57,6 +58,20 @@ storiesOf('React App', module)
         subtitle={text('Subtitle', 'Storybook Boilerplate Project')}
       />,
     ))
+    .addWithInfo('App-LeftMenu', '<LeftMenu />', () => withNote(
+      `
+        Header Component
+
+        source: src/LeftMenu.jsx
+        story: src/stories
+        test: src/tests
+      `,
+      <LeftMenu
+        title={text('Title', 'LeftMenu')}
+        subtitle={text('Subtitle', 'App-LeftMenu')}
+      />,
+    ))
+
     .addWithInfo('App-intro', '<Intro />', () => withNote(
       `
         Intro Component

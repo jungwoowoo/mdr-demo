@@ -5,7 +5,7 @@ import infoAddon from '@storybook/addon-info';
 storybook.setAddon(infoAddon);
 
 setOptions({
-    name: 'React Theming',
+    name: 'MediRita UI Template',
     url: 'https://github.com/sm-react/react-theming',
     goFullScreen: true,
     showLeftPanel: true,

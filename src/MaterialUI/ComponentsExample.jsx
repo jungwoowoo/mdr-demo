@@ -2,6 +2,7 @@ import React from 'react';
 import muiThemeable from 'material-ui/styles/muiThemeable';
 import withWidth from 'material-ui/utils/withWidth';
 import typography from 'material-ui/styles/typography';
+import Typography from 'material-ui';
 import ClearFix from 'material-ui/internal/ClearFix';
 
 import {
@@ -23,9 +24,12 @@ import {
   Tab,
   TextField,
   Toggle,
+  List,
+  ListItem,
 } from 'material-ui';
 
 import LogoUsulPro from './LogoUsulPro.png';
+import Menu from 'material-ui/Menu';
 
 function getStyles() {
     const styles = {
@@ -225,7 +229,7 @@ class ThemesPage extends React.Component {
                   label="View Drawer"
                 />
                 <Drawer
-                  open={this.state.drawerOpen} docked={false}
+                  open={this.state.drawerOpen} docked={false} anchor='right'
                   onRequestChange={this.handleRequestChangeDrawer}
                 >
                   <MenuItem>Menu Item</MenuItem>
@@ -248,6 +252,84 @@ class ThemesPage extends React.Component {
                 onActionTouchTap={this.handleRequestCloseSnackbar}
               />
             </div>
+            <div style={styles.group}>
+              <div style={styles.containerCentered}>
+                <FlatButton
+                  onTouchTap={this.handleTouchTapSnackbar}
+                  label="View Test 123"
+                />
+              </div>
+              <Snackbar
+                open={this.state.snackbarOpen}
+                onRequestClose={this.handleRequestCloseSnackbar}
+                message="This is a snackbar Test 123"
+                action="Got It!"
+                onActionTouchTap={this.handleRequestCloseSnackbar}
+              />
+            </div>
+
+            <div style={styles.group}>
+              <div style={styles.containerCentered}>
+                <FlatButton
+                  onTouchTap={this.handleTouchTapSnackbar}
+                  label="View Test 456456"
+                />
+              </div>
+              <Snackbar
+                open={this.state.snackbarOpen}
+                onRequestClose={this.handleRequestCloseSnackbar}
+                message="789 Test 123"
+                action="Got It!"
+                onActionTouchTap={this.handleRequestCloseSnackbar}
+              />
+            </div>
+            <div style={styles.group}>
+            <List>
+              <ListItem button>
+                <b>Drafts</b>
+              </ListItem>
+              <ListItem button>
+                456
+              </ListItem>
+              <ListItem button>
+                789
+              </ListItem>
+            </List>
+            </div>
+
+            <div style={styles.group}>
+            <Menu>
+              <MenuItem>
+                <b>Drafts</b>
+              </MenuItem>
+              <MenuItem>
+                456
+              </MenuItem>
+              <MenuItem>
+                789
+              </MenuItem>
+            </Menu>
+            </div>
+
+            <div style={styles.group}>
+              <Drawer
+                variant="permanent"
+                anchor="right"
+              >
+              <List>
+              <ListItem button>
+                <b>Drafts</b>
+              </ListItem>
+              <ListItem button>
+                456
+              </ListItem>
+              <ListItem button>
+                789
+              </ListItem>
+            </List>
+              </Drawer>
+            </div>
+
           </ClearFix>
         );
     }
@@ -318,8 +400,11 @@ class ThemesPage extends React.Component {
               Material-UI Components. Press <b>Ctrl-Shft-F</b> to exit from fullscreen mode.
             </Paper>*/}
             <Paper style={styles.liveExamplePaper}>
+              <h3>This is a sheet of paper.</h3>
               <ClearFix style={styles.liveExampleBlock}>{this.getThemeExamples()}</ClearFix>
             </Paper>
+
+            <h3>footer</h3>
           </div>
         );
     }

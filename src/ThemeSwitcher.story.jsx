@@ -20,7 +20,7 @@ storiesOf('Theme Switcher', module)
     })
     .add('Component', () => {
         setOptions({
-            name: 'React Theme Provider',
+            name: 'React Theme Provider Test 123',
             url: 'https://github.com/sm-react/react-theme-provider',
         });
         return (<ThemeSwitcher><div><PlainHTML /></div></ThemeSwitcher>);
